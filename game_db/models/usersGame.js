@@ -14,6 +14,7 @@ const UsersGameSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Console',
   }],
+  archived: Boolean,
 }, {timestamps:true});
 
 const UsersGame = mongoose.model("UsersGame", UsersGameSchema);

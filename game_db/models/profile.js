@@ -9,10 +9,6 @@ const ProfileSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'UserGame',
   }],
-  archive: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'UsersGame',
-  }],
 }, {timestamps:true});
 
 const Profile = mongoose.model("Profile", ProfileSchema);
