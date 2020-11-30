@@ -7,7 +7,7 @@ const ConsoleSchema = new Schema({
   lifetimeSales: Number,
   manufacturer: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Console',
+    ref: 'Company',
   },
   games: [{
     type: mongoose.Schema.Types.ObjectId,
