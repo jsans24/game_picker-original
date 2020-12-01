@@ -5,7 +5,7 @@ const ProfileSchema = new Schema({
   name: String,
   image: String,
   user: String,
-  collection: [{
+  userCollection: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'UserGame',
   }],

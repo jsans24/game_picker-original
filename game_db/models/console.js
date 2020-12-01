@@ -9,10 +9,6 @@ const ConsoleSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Company',
   },
-  games: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Game',
-  }],
 }, {timestamps:true});
 
 const Console = mongoose.model("Console", ConsoleSchema);

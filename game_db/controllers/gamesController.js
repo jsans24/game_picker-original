@@ -22,7 +22,43 @@ const show = (req, res) => {
     });
 };
 
+const create = (req, res) => {
+  db.Game.create(req.body)
+    .then((savedGame) => {
+      res.json({ game: savedGame});
+    })
+    .catch((err) => {
+      console.log("Error in Game.create: ", err);
+      res.json({ Error: "Unable to create Game" });
+    });
+};
+
+const update = (req, res) => {
+  db.Game.findByIdAndUpdate(req.params.id, req.body)
+  .then((updatedGame) => {
+    res.json({ game: updatedGame });
+  })
+  .catch((err) => {
+    console.log("Error in Game.update: ", err);
+    res.json({ Error: 'Unable to update Game' });
+  })
+};
+
+const destroy = (req, res) => {
+  db.Game.findByIdAndDelete(req.params.id)
+  .then((deletedGame) => {
+    res.json({ game: deletedGame });
+  })
+  .catch((err) => {
+    console.log("Error in Game.destroy: ", err);
+    res.json({ Error: 'Unable to delete Game' });
+  })
+};
+
 module.exports = {
   index,
   show,
+  create,
+  update,
+  destroy,
 };

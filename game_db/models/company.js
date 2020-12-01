@@ -10,14 +10,6 @@ const CompanySchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Company',
   },
-  games: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Game',
-  }],
-  consoles: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Console',
-  }],
 }, {timestamps:true});
 
 const Company = mongoose.model("Company", CompanySchema);

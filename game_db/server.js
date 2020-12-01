@@ -21,7 +21,7 @@ app.use("/companies", routes.companies);
 app.use("/consoles", routes.consoles);
 app.use("/games", routes.games);
 app.use("/profiles", routes.profiles);
-app.use("/usersGames", routes.usersGames);
+app.use("profiles/:id/usersGames", routes.usersGames);
 
 // connection
 app.listen(port, () => console.log(`Server running on Port: ${port}`));
