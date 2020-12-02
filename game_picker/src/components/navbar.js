@@ -3,35 +3,32 @@ import AuthenticationButton from "./authentication-button";
 
 const Navbar = () => {
   return (
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Expand at md</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+      <a className="navbar-brand" href="#">Game Picker</a>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample04">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <div className="collapse navbar-collapse" id="navbarsExample04">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item active">
+            <a className="nav-link" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <AuthenticationButton />
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown04">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+          <li className="nav-item">
+            <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-md-0">
-          <input class="form-control" type="text" placeholder="Search"/>
+        <form className="form-inline my-2 my-md-0">
+          <input className="form-control" type="text" placeholder="Search"/>
         </form>
+        <span className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="http://cdn.onlinewebfonts.com/svg/img_331336.png" width="15px" alt=""/></a>
+          <div className="dropdown-menu dropdown-menu-md-right" aria-labelledby="dropdown01">
+            <a className="dropdown-item" href="#">Another action</a>
+            <a className="dropdown-item" href="#">Something else here</a>
+            <AuthenticationButton />
+          </div>
+        </span>
       </div>
     </nav>
   )
