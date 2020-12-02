@@ -8,9 +8,9 @@ class ConsoleModel {
   };
 
   static getOne = (id) => {
-    let request = axios.get(`${url}/${id}`);
+    let request = axios.get(`${url}${id}`);
     return request;
   };
 };
 
-export default ConsoleModel
+export default ConsoleModel;

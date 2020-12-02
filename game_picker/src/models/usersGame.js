@@ -8,7 +8,7 @@ class UsersGameModel {
   };
 
   static getOne = (id) => {
-    let request = axios.get(`${url}/${id}`);
+    let request = axios.get(`${url}${id}`);
     return request;
   };
 
@@ -18,14 +18,14 @@ class UsersGameModel {
   };
 
   static delete = (usersGame) => {
-    let request = axios.delete(`${url}/${usersGame._id}`);
+    let request = axios.delete(`${url}${usersGame._id}`);
     return request;
   };
 
   static update = (usersGame) => {
-    let request = axios.put(`${url}/${usersGame._id}`, usersGame);
+    let request = axios.put(`${url}${usersGame._id}`, usersGame);
     return request;
   };
 };
 
-export default UsersGameModel
+export default UsersGameModel;

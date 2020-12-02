@@ -8,7 +8,7 @@ class ProfileModel {
   };
 
   static getOne = (id) => {
-    let request = axios.get(`${url}/${id}`);
+    let request = axios.get(`${url}${id}`);
     return request;
   };
 
@@ -18,14 +18,14 @@ class ProfileModel {
   };
 
   static delete = (profile) => {
-    let request = axios.delete(`${url}/${profile._id}`);
+    let request = axios.delete(`${url}${profile._id}`);
     return request;
   };
 
   static update = (profile) => {
-    let request = axios.put(`${url}/${profile._id}`, profile);
+    let request = axios.put(`${url}${profile._id}`, profile);
     return request;
   };
 };
 
-export default ProfileModel
+export default ProfileModel;

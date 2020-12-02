@@ -1,16 +1,22 @@
-import { Route, Switch } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 import './App.css';
+import Loading from './components/loading';
 import Navbar from './components/navbar';
-import Home from './Views/home';
+import Router from './components/router';
 
 function App() {
+  const { isLoading } = useAuth0();
+
+  if(isLoading) {
+    return <Loading />
+  }
   return (
-    <div className="App">
+    <>
       <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
-    </div>
+      <div className="App">
+        <Router />
+      </div>
+    </>
   );
 }
 

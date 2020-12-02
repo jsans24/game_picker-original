@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const UsersGameSchema = new Schema({
   profile: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Profile',
+    type: String,
+    required: True,
   },
   game: {
     type: mongoose.Schema.Types.ObjectId,
