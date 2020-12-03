@@ -7,6 +7,8 @@ const Profile = () => {
 
   console.log(user);
 
+  console.log(user.sub);
+
   return (
     <div>
       <div className="row align-items-center profile-header">

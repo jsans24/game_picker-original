@@ -17,7 +17,7 @@ class GameIndex extends React.Component {
 
   render() {
     const gamesList = this.state.games.map((game) => (
-      <Link key={game._id} to={`/games/${game._id}`}><li>{game.Title}</li></Link>
+      <Link key={game._id} to={`/games/${game._id}`}><li>{game.title}</li></Link>
     ))
     return (
       <>

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const UsersGameSchema = new Schema({
   profile: {
     type: String,
-    required: True,
+    required: true,
   },
   game: {
     type: mongoose.Schema.Types.ObjectId,

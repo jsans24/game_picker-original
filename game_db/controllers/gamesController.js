@@ -13,13 +13,21 @@ const index = (req, res) => {
 
 const show = (req, res) => {
   db.Game.findById(req.params.id)
-    .then((foundGame) => {
-      res.json({ game: foundGame });
+    .populate("publisher")
+    .populate("developer")
+    .populate("platforms")
+    .exec((err, foundGame) => {
+      if(err) console.log(err);
+
+      res.json({ game: foundGame })
     })
-    .catch((err) => {
-      console.log("Error in game.show: ", err);
-      res.json({ Error: "Unable to retrieve your data" });
-    });
+    // .then((foundGame) => {
+    //   res.json({ game: foundGame });
+    // })
+    // .catch((err) => {
+    //   console.log("Error in game.show: ", err);
+    //   res.json({ Error: "Unable to retrieve your data" });
+    // });
 };
 
 const create = (req, res) => {
