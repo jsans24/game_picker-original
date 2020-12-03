@@ -1,5 +1,5 @@
 import React from "react";
-import AddGame from "../components/addGame";
+import AddGame from "../components/gameCard";
 // import Loading from "../components/loading";
 import GameModel from "../models/game";
 // import { Link } from "react-router-dom";

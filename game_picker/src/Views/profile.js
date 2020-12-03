@@ -6,6 +6,7 @@ class Profile extends React.Component {
 
   state = {
     user: this.props.auth0.user,
+    usersCollection: [],
   }
 
   componentDidMount() {
@@ -16,10 +17,16 @@ class Profile extends React.Component {
   fetchData = async () => {
     const usersCollection = await UsersGameModel.findCollection(this.state.user.sub)
 
-    return this.setState({ usersCollection: usersCollection.data.usersGames });
+    return this.setState({ usersCollection: usersCollection.data.game });
   }
 
-  pickRandomGame
+  pickRandomGame = () => {
+    const randomNum = Math.floor(Math.random() * (this.state.usersCollection.length))
+
+    console.log(this.state.usersCollection.length -1);
+    console.log("random number", randomNum);
+
+  }
 
   render() {
     console.log(this.state);
@@ -38,6 +45,7 @@ class Profile extends React.Component {
             <p className="lead text-muted">{this.state.user.email}</p>
           </div>
         </div>
+        <button onClick={this.pickRandomGame}>number</button>
       </div>
     );
   }

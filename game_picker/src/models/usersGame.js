@@ -32,8 +32,8 @@ class UsersGameModel {
     return request;
   };
 
-  static update = (usersGame) => {
-    let request = axios.put(`${url}${usersGame._id}`, usersGame);
+  static update = (usersGame, updatedGame) => {
+    let request = axios.put(`${url}${usersGame._id}`, updatedGame);
     return request;
   };
 };
