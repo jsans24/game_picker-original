@@ -13,19 +13,30 @@ const index = (req, res) => {
 
 const show = (req, res) => {
   db.UsersGame.findById(req.params.id)
-    .then((foundUsersGame) => {
-      res.json({ usersGame: foundUsersGame });
+  .populate("game")
+  .populate("ownedPlatforms")
+  .exec((err, foundGame) => {
+    if(err) console.log(err);
+
+    res.json({ game: foundGame })
+  })
+};
+
+const findCollection = (req, res) => {
+  const profile = req.params.profile
+  db.UsersGame.find({profile: profile})
+    .then((foundUsersGames) => {
+      res.json({ usersGames: foundUsersGames });
     })
     .catch((err) => {
-      console.log("Error in usersGame.show: ", err);
+      console.log("Error in usersGames.index: ", err);
       res.json({ Error: "Unable to retrieve your data" });
     });
 };
 
 const find = (req, res) => {
-  const game = req.params.game
   const profile = req.params.profile
-  db.UsersGame.findOne({game: game, profile: profile})
+  db.UsersGame.find({ profile: profile })
     .then((foundUsersGames) => {
       res.json({ usersGames: foundUsersGames });
     })
@@ -71,6 +82,7 @@ const destroy = (req, res) => {
 module.exports = {
   index,
   find,
+  findCollection,
   show,
   create,
   update,

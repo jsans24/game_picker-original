@@ -13,6 +13,7 @@ const UsersGameSchema = new Schema({
   ownedPlatforms: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Console',
+    required: true,
   }],
   archived: Boolean,
 }, {timestamps:true});

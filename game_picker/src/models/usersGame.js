@@ -12,6 +12,11 @@ class UsersGameModel {
     return request;
   };
 
+  static findCollection = (profile) => {
+    let request = axios.get(`${url}findcollection/${profile}`)
+    return request;
+  };
+
   static getOne = (id) => {
     let request = axios.get(`${url}${id}`);
     return request;

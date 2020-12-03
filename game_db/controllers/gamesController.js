@@ -21,13 +21,6 @@ const show = (req, res) => {
 
       res.json({ game: foundGame })
     })
-    // .then((foundGame) => {
-    //   res.json({ game: foundGame });
-    // })
-    // .catch((err) => {
-    //   console.log("Error in game.show: ", err);
-    //   res.json({ Error: "Unable to retrieve your data" });
-    // });
 };
 
 const create = (req, res) => {
