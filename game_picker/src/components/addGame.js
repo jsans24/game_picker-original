@@ -18,6 +18,10 @@ class AddGame extends React.Component {
     this.checkDB()
   }
 
+  refreshPage = () => (
+    window.location.reload()
+  )
+
   checkDB = async () => {
     const usersCopyData = await UsersGameModel.find(this.state.game, this.state.profile)
 
@@ -26,22 +30,25 @@ class AddGame extends React.Component {
 
   deleteUsersGame = async (event) => {
     event.preventDefault();
-    const deletedGame = await UsersGameModel.delete(this.state.usersCopy[0])
-    return this.setState({ usersCopy: [] })
+    const deletedGame = await UsersGameModel.delete(this.state.usersCopy)
+    this.setState({ usersCopy: [] })
+    return this.checkDB()
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
 
-    UsersGameModel.create(this.state)
-
-    return <Redirect to="/profile" />
+    const create = await UsersGameModel.create(this.state)
+    
+    return this.checkDB()
+    
+    // return this.refreshPage()
   }
 
   render() {
     console.log(this.state);
     const choiceRender = () => {
-    if(!this.state.usersCopy.length){
+    if(!this.state.usersCopy){
         const consoleList = this.props.game.platforms.map((platform) => {
           const checkbox = () => {
             console.log(this.state.ownedPlatforms);
@@ -72,9 +79,9 @@ class AddGame extends React.Component {
           {this.props.game.title}
         </div>
         <div className="card-body">
-          <form onSubmit={this.state.usersCopy.length ? this.deleteUsersGame : this.handleSubmit}>
+          <form onSubmit={this.state.usersCopy ? this.deleteUsersGame : this.handleSubmit}>
             {choiceRender()}
-            <input type="submit" value={this.state.usersCopy.length ? "Remove From Your Collection" : "Add To Your Collection"} />
+            <input type="submit" value={this.state.usersCopy ? "Remove From Your Collection" : "Add To Your Collection"} />
           </form>
         </div>
       </div>
