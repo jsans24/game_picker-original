@@ -7,12 +7,14 @@ import Profile from "../Views/profile";
 
 const Router = () => {
   return(
+    <div className="custom-container">
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/profile" component={Profile} />
       <Route exact path="/games" component={GameIndex} />
       <Route path="/games/:id" component={GameShow} />
     </Switch>
+    </div>
   )
 }
 
