@@ -10,7 +10,7 @@ const Profile = () => {
   console.log(user.sub);
 
   return (
-    <div>
+    <div className="custom-container">
       <div className="row align-items-center profile-header">
         <div className="col-md-2 mb-3">
           <img

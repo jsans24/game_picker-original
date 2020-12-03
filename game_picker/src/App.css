@@ -40,3 +40,8 @@
 .gameImage {
   width: 70vw;
 }
+
+.custom-container {
+  width: 90vw;
+  margin: auto;
+}

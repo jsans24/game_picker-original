@@ -10,16 +10,24 @@ class AddGame extends React.Component {
     profile: this.props.auth0.user.sub,
     ownedPlatforms: [],
     archived: false,
+    usersCopy: [],
   }
 
   
   componentDidMount() {
-    console.log(this.state);
+    this.checkDB()
   }
 
-  checkDB = (param1, param2) => {
-    let request = axios.get('http://localhost:4000/usersgames?game=' +  param1 + '');
-    return request;
+  checkDB = async () => {
+    const usersCopyData = await UsersGameModel.find(this.state.game, this.state.profile)
+
+    return this.setState({ usersCopy: usersCopyData.data.usersGames })
+  }
+
+  deleteUsersGame = async (event) => {
+    event.preventDefault();
+    const deletedGame = await UsersGameModel.delete(this.state.usersCopy[0])
+    return this.setState({ usersCopy: [] })
   }
 
   handleSubmit = (event) => {
@@ -31,40 +39,42 @@ class AddGame extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.state);
     const choiceRender = () => {
-      const consoleList = this.props.game.platforms.map((platform) => {
-        const checkbox = () => {
-          console.log(this.state.ownedPlatforms);
-          if(this.state.ownedPlatforms.includes(platform._id)) {
-            this.state.ownedPlatforms.splice(this.state.ownedPlatforms.indexOf(platform._id), 1)
-          } else this.state.ownedPlatforms.push(platform._id)
-        }
-        return <div key={platform._id}>
-          <input 
-            type="checkbox" 
-            name="consoles" 
-            className="consoleChoice"
-            onChange={checkbox}
-          /> 
-          <label>{platform.name}</label>
-        </div>
-      })
-  
-      return consoleList;
+    if(!this.state.usersCopy.length){
+        const consoleList = this.props.game.platforms.map((platform) => {
+          const checkbox = () => {
+            console.log(this.state.ownedPlatforms);
+            if(this.state.ownedPlatforms.includes(platform._id)) {
+              this.state.ownedPlatforms.splice(this.state.ownedPlatforms.indexOf(platform._id), 1)
+            } else this.state.ownedPlatforms.push(platform._id)
+          }
+          return <div key={platform._id}>
+            <input 
+              type="checkbox" 
+              name="consoles" 
+              className="consoleChoice"
+              onChange={checkbox}
+            /> 
+            <label>{platform.name}</label>
+          </div>
+        })
+    
+        return consoleList;
+      }
     }
 
     
 
     return(
-      <div class="card">
-        <div class="card-header">
+      <div className="card">
+        <div className="card-header">
           {this.props.game.title}
         </div>
-        <div class="card-body">
-          <form onSubmit={this.handleSubmit}>
+        <div className="card-body">
+          <form onSubmit={this.state.usersCopy.length ? this.deleteUsersGame : this.handleSubmit}>
             {choiceRender()}
-            <input type="submit" value="Add To Your Collection" />
+            <input type="submit" value={this.state.usersCopy.length ? "Remove From Your Collection" : "Add To Your Collection"} />
           </form>
         </div>
       </div>

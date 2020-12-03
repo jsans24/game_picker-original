@@ -22,6 +22,19 @@ const show = (req, res) => {
     });
 };
 
+const find = (req, res) => {
+  const game = req.params.game
+  const profile = req.params.profile
+  db.UsersGame.findOne({game: game, profile: profile})
+    .then((foundUsersGames) => {
+      res.json({ usersGames: foundUsersGames });
+    })
+    .catch((err) => {
+      console.log("Error in usersGames.index: ", err);
+      res.json({ Error: "Unable to retrieve your data" });
+    });
+};
+
 const create = (req, res) => {
   db.UsersGame.create(req.body)
     .then((savedUsersGame) => {
@@ -57,6 +70,7 @@ const destroy = (req, res) => {
 
 module.exports = {
   index,
+  find,
   show,
   create,
   update,

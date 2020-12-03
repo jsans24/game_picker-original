@@ -6,6 +6,11 @@ class UsersGameModel {
     let request = axios.get(url);
     return request;
   };
+  
+  static find = (game, profile) => {
+    let request = axios.get(`${url}find/${game}/${profile}`);
+    return request;
+  };
 
   static getOne = (id) => {
     let request = axios.get(`${url}${id}`);
