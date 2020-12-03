@@ -16,11 +16,11 @@ const Navbar = () => {
 
       <div className="collapse navbar-collapse" id="navbarsExample04">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <NavLink className="nav-link" to="/">Home</NavLink>
+          <li className="nav-item">
+            <NavLink className="nav-link" exact to="/">Home</NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
+            <NavLink className="nav-link" to="/games" tabIndex="-1">Games</NavLink>
           </li>
         </ul>
         <form className="form-inline my-2 my-md-0">
