@@ -1,48 +1,99 @@
+body {
+  background-color: rgb(65, 69, 80);
+}
+
 .App {
   margin-top: 4%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background-color: rgba(0, 0, 0, 0.555);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-title {
+  color: gray;
 }
 
 .gameImage {
-  width: 100%;
+  width: 80%;
 }
 
 .custom-container {
   width: 90vw;
   margin-left: auto;
   margin-right: auto;
+}
+
+.loader {
+  position: absolute;
+  top: 45vh;
+  bottom: 45vh;
+  left: 45vw;
+  right: 45vw;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.landing-background {
+  position: fixed;
+  z-index: -1;
+  top: -50%;
+  left: 0%;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.blurb {
+  margin-top: 15vh;
+  width: 20vw;
+  margin-left: auto;
+  margin-right: 60vw;
+  color: azure;
+}
+
+.gameShow {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.info-container {
+  margin-top: 3vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: aliceblue;
+}
+
+.dk-card {
+  background-color: rgba(0, 0, 0, 0.555);
+  min-width: 40%;
+}
+
+.indexPage {
+  display: flex;
+}
+
+.searchFilter {
+  height: 80%;
+  width: 15%;
+  padding: 1%;
+  background-color: rgba(0, 0, 0, 0.555);
+}
+
+.gameItems {
+  color: aliceblue;
+  list-style: none;
+}
+
+.gameItems:hover {
+  color: black;
 }

@@ -3,7 +3,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import UsersGameModel from "../models/usersGame";
 
-class AddGame extends React.Component {
+class GameCard extends React.Component {
   
   state = {
     game: this.props.game._id,
@@ -119,7 +119,7 @@ class AddGame extends React.Component {
     
 
     return(
-      <div className="card">
+      <div className="card dk-card">
         <div className="card-header">
           {this.props.game.title}
         </div>
@@ -135,4 +135,4 @@ class AddGame extends React.Component {
   }
 }
 
-export default withAuth0(AddGame);
+export default withAuth0(GameCard);
