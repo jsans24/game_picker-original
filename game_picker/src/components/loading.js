@@ -1,5 +1,5 @@
 import React from "react";
-import loadingImg from "./Spinner-1.3s-201px.gif";
+import loadingImg from "../images/Spinner-1.3s-201px.gif";
 
 class Loading extends React.Component {
   render() {

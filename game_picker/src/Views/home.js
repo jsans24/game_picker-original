@@ -1,5 +1,6 @@
 import { withAuth0 } from "@auth0/auth0-react";
 import React from "react";
+import { Link } from "react-router-dom";
 import HomeButton from "../components/homepageButton";
 import Randomizer from "../components/randomizer";
 import UsersGameModel from "../models/usersGame";
@@ -24,7 +25,7 @@ class Home extends React.Component {
 
   renderButton = () => {
     if(this.state.user && this.state.usersCollection.length) return <Randomizer usersCollection={this.state.usersCollection}/>
-    else if(this.state.user) return <button className="btn btn-secondary">Build Your Collection</button>
+    else if(this.state.user) return <Link to="/games" className="btn btn-secondary">Build Your Collection</Link>
     else return <HomeButton />
   }
 
