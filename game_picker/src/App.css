@@ -78,8 +78,13 @@ body {
   min-width: 40%;
 }
 
+.indexPage {
+  display: flex;
+}
+
 .searchFilter {
   height: 80%;
   width: 15%;
+  padding: 1%;
   background-color: rgba(0, 0, 0, 0.555);
 }
