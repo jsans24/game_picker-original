@@ -1,3 +1,10 @@
+.backgroundColor {
+  background-color: gray;
+  position: fixed;
+  height: 200vh;
+  width: 100vw;
+}
+
 .App {
   margin-top: 4%;
 }

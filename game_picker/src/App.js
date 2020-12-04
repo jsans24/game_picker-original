@@ -11,12 +11,12 @@ function App() {
     return <Loading />
   }
   return (
-    <>
+    <div className="backgroundColor">
       <Navbar />
       <div className="App">
         <Router />
       </div>
-    </>
+    </div>
   );
 }
 
