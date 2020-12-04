@@ -66,7 +66,10 @@ class GameIndex extends React.Component {
     
     return (
       <>
-      <form><input type="text" placeholder="Search" onInput={this.handleSearch}/></form>
+        <div className="searchFilter">
+          
+        </div>
+        <form><input type="text" placeholder="Search" onInput={this.handleSearch}/></form>
         <ul>
           {this.gamesList()}
         </ul>

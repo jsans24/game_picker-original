@@ -7,7 +7,7 @@ body {
 }
 
 .navbar {
-  background-color: rgba(22, 22, 29, 0);
+  background-color: rgba(0, 0, 0, 0.555);
 }
 
 .main-title {
@@ -15,7 +15,7 @@ body {
 }
 
 .gameImage {
-  width: 50%;
+  width: 80%;
 }
 
 .custom-container {
@@ -57,4 +57,29 @@ body {
   margin-left: auto;
   margin-right: 60vw;
   color: azure;
+}
+
+.gameShow {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.info-container {
+  margin-top: 3vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: aliceblue;
+}
+
+.dk-card {
+  background-color: rgba(0, 0, 0, 0.555);
+  min-width: 40%;
+}
+
+.searchFilter {
+  height: 80%;
+  width: 15%;
+  background-color: rgba(0, 0, 0, 0.555);
 }

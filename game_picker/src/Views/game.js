@@ -35,19 +35,22 @@ class GameShow extends React.Component {
     if(this.state.game) {
       const date = new Date (this.state.game.releaseDate).toDateString()
       return (
-        <>
-        <img src={this.state.game.img} className="gameImage" alt=""/>
-        <h1>{this.state.game.title}</h1>
-        <h4>Release Date: {date}</h4>
-        <h4>Publisher: {this.state.game.publisher.name}</h4>
-        <h4>Developer: {this.state.game.developer.name}</h4>
-        <h4>Console:</h4>
-        <ul>
-        {this.consoleRender()}
-        </ul>
-
-        {this.props.auth0.user ? <AddGame game={this.state.game} /> : <div></div>}
-        </>
+        <div className="gameShow">
+          <img src={this.state.game.img} className="gameImage" alt=""/>
+          <div className="info-container">
+            <div>
+              <h1>{this.state.game.title}</h1>
+              <h4>Release Date: {date}</h4>
+              <h4>Publisher: {this.state.game.publisher.name}</h4>
+              <h4>Developer: {this.state.game.developer.name}</h4>
+              <h4>Console:</h4>
+              <ul>
+                {this.consoleRender()}
+              </ul>
+            </div>
+            {this.props.auth0.user ? <AddGame game={this.state.game} /> : <div></div>}
+          </div>
+        </div>
       )
     } else return (<></>)
   }

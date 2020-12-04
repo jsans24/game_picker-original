@@ -119,7 +119,7 @@ class GameCard extends React.Component {
     
 
     return(
-      <div className="card">
+      <div className="card dk-card">
         <div className="card-header">
           {this.props.game.title}
         </div>
