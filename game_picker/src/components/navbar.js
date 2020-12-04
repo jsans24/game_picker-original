@@ -23,9 +23,6 @@ const Navbar = () => {
             <NavLink className="nav-link" to="/games" tabIndex="-1">Games</NavLink>
           </li>
         </ul>
-        <form className="form-inline my-2 my-md-0">
-          <input className="form-control" type="text" placeholder="Search"/>
-        </form>
         <span className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img src={user ? user.picture : "http://cdn.onlinewebfonts.com/svg/img_331336.png"} width="30px" alt=""/>

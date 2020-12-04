@@ -38,7 +38,7 @@
 }
 
 .gameImage {
-  width: 100%;
+  width: 50%;
 }
 
 .custom-container {
@@ -47,5 +47,7 @@
   margin-right: auto;
 }
 .loader {
-  margin: 40vh, 40vw;
+  position: absolute;
+  top: 35vh;
+  left: 35vw;
 }
