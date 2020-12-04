@@ -1,5 +1,6 @@
 import { withAuth0 } from "@auth0/auth0-react";
 import React from "react";
+import HomeButton from "../components/homepageButton";
 import Randomizer from "../components/randomizer";
 import UsersGameModel from "../models/usersGame";
 
@@ -21,11 +22,17 @@ class Home extends React.Component {
     }
   }
 
+  renderButton = () => {
+    if(this.state.user && this.state.usersCollection.length) return <Randomizer usersCollection={this.state.usersCollection}/>
+    else return <HomeButton />
+  }
+
   render() {
     return(
     <>
-    <h1>Home Page</h1>
-    {this.props.auth0.user ? <Randomizer usersCollection={this.state.usersCollection} /> : <div></div>}
+    <img src="https://wallpapercave.com/wp/BFFsnBO.jpg" alt="controller" className="landing-background" />
+    <h1 className="main-title">Welcome To Game Picker</h1>
+    {this.renderButton()}
     </>
     )
   }

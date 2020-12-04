@@ -12,7 +12,7 @@ const Randomizer = (props) => {
 
   return (
     <div>
-      <button onClick={pickRandomGame}>Hello</button>
+      <button className="btn btn-secondary" onClick={pickRandomGame}>Hello</button>
     </div>
   )
 }
