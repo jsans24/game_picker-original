@@ -55,10 +55,10 @@ class GameIndex extends React.Component {
   gamesList = () => {
     return this.state.filtered ?
       this.state.filtered.map((game) => (
-        <Link key={game._id} to={`/games/${game._id}`}><li>{game.title}</li></Link>
+        <Link key={game._id} to={`/games/${game._id}`}><li className="gameItems">{game.title}</li></Link>
       )) :
       this.state.games.map((game) => (
-        <Link key={game._id} to={`/games/${game._id}`}><li>{game.title}</li></Link>
+        <Link key={game._id} to={`/games/${game._id}`}><li className="gameItems">{game.title}</li></Link>
       ))
   }
 

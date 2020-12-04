@@ -88,3 +88,12 @@ body {
   padding: 1%;
   background-color: rgba(0, 0, 0, 0.555);
 }
+
+.gameItems {
+  color: aliceblue;
+  list-style: none;
+}
+
+.gameItems:hover {
+  color: black;
+}
