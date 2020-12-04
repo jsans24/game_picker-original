@@ -24,6 +24,7 @@ class Home extends React.Component {
 
   renderButton = () => {
     if(this.state.user && this.state.usersCollection.length) return <Randomizer usersCollection={this.state.usersCollection}/>
+    else if(this.state.user) return <button className="btn btn-secondary">Build Your Collection</button>
     else return <HomeButton />
   }
 
@@ -32,7 +33,10 @@ class Home extends React.Component {
     <>
     <img src="https://wallpapercave.com/wp/BFFsnBO.jpg" alt="controller" className="landing-background" />
     <h1 className="main-title">Welcome To Game Picker</h1>
-    {this.renderButton()}
+    <div className="blurb">
+      <h3>Let us Pick a Game For You</h3>
+      {this.renderButton()}
+    </div>
     </>
     )
   }
