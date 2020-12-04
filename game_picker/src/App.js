@@ -11,7 +11,7 @@ function App() {
     return <Loading />
   }
   return (
-    <div>
+    <div className="background">
       <Navbar />
       <div className="App">
         <Router />
