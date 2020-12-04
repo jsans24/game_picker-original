@@ -20,14 +20,6 @@ class Profile extends React.Component {
     return this.setState({ usersCollection: usersCollection.data.game });
   }
 
-  pickRandomGame = () => {
-    const randomNum = Math.floor(Math.random() * (this.state.usersCollection.length))
-
-    console.log(this.state.usersCollection.length -1);
-    console.log("random number", randomNum);
-
-  }
-
   render() {
     console.log(this.state);
     return (
@@ -45,7 +37,6 @@ class Profile extends React.Component {
             <p className="lead text-muted">{this.state.user.email}</p>
           </div>
         </div>
-        <button onClick={this.pickRandomGame}>number</button>
       </div>
     );
   }

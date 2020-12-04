@@ -1,3 +1,4 @@
+import { withAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import AddGame from "../components/gameCard";
 // import Loading from "../components/loading";
@@ -45,11 +46,11 @@ class GameShow extends React.Component {
         {this.consoleRender()}
         </ul>
 
-        <AddGame game={this.state.game} />
+        {this.props.auth0.user ? <AddGame game={this.state.game} /> : <div></div>}
         </>
       )
     } else return (<></>)
   }
 }
 
-export default GameShow;
+export default withAuth0(GameShow);
